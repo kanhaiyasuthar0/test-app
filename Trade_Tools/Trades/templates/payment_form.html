@@ -1,0 +1,145 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} Payment Form {% endblock %}
+
+
+
+{% block content %}
+
+<section class="section-bg_pay" style="background-image: url(https://i.ibb.co/9p3Cnk9/slider-2.jpg);"
+        data-scroll-index="7">
+        <div class="overlay_pay pt-100 pb-100 ">
+            <div class="container_pay">
+                <div class="row">
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <div class="contact-info_pay">
+
+                            <h2 class="contact-title_pay">Need Assistance? We’re Here to Help!</h2>
+                            <p>Got a question about our trading tools or services? Reach out to us anytime, and our team will assist you in making the right decisions for your trading journey.</p>
+                            <ul class="contact-info_pay2">
+                                <li>
+                                    <div class="info-left_pay">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="info-right_pay">
+                                        <h4>+918764468879</h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-left_pay">
+                                        <i class="fas fa-at"></i>
+                                    </div>
+                                    <div class="info-right_pay">
+                                        <h4>developerpy247@gmail.com</h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-left_pay">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="info-right_pay">
+                                        <h4>313324 Rajsamand Rajsthan, INDIA</h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <div class="contact-form_pay">
+                            <div style="position: relative;">
+                                {% if messages %}
+                                {% for message in messages %}
+                                <div style="width: 90%; height:45px; background-color:rgba(235, 0, 55, 0.19); color:rgba(235, 0, 82, 0.83); padding: 10px;" class="alert1 alert1-{{ message.tags }}">{{ message }}</div>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                            {% comment %} <form method="POST" "> {% endcomment %}
+                            <!--Contact Form-->
+                            <form id='contact-form_pay' method='POST' action="{% url 'initiate_payment' %}">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group_pay">
+                                            <input type="text" name="customer_name" class="form-control_pay" id="first-name"
+                                                placeholder="Enter Your Name *" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group_pay">
+                                            <input type="email" name="customer_email" class="form-control_pay" id="email"
+                                                placeholder="Enter Your Email *" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group_pay">
+                                            <input type="number" class="form-control_pay" name="customer_phone" placeholder="Phone Number Here *" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group_pay">
+                                            <input type="text" class="form-control_pay" name="custumer_city" placeholder="Enter Your City *" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group_pay">
+                                            <input type="text" class="form-control_pay" name="copun_code" placeholder="Enter Coupon Code or None *">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <!--contact button-->
+                                        <button type="submit" class="btn-big_pay btn_pay btn-bg">
+                                            Pay Now <i class="fas fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <div class="main-container">
+    <!-- Form Section -->
+    <div class="form-container">
+        <form method="POST" action="{% url 'initiate_payment' %}">
+            {% csrf_token %}
+            <h2>Payment</h2>
+            <input type="name" name="customer_name" placeholder="Full Name" required>
+            <input type="email" name="customer_email" placeholder="Email Address" required>
+            <input type="phone" name="customer_phone" placeholder="Phone Number">
+            <input type="text" name="custumer_city" placeholder="Your City ">
+            <button type="submit" class="btn btn-primary">Pay Now</button>
+        </form>
+    </div>
+    <!-- Slideshow Section -->
+    <div class="slideshow">
+        <div class="slides">
+            <img src="{% static 'img/image1.jpg' %}" alt="Image 1">
+            <img src="{% static 'img/image2.jpg' %}" alt="Image 2">
+            <img src="{% static 'img/image3.jpg' %}" alt="Image 3">
+        </div>
+        <div class="navigation">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </div>
+</div> {% endcomment %}
+{% endblock %}
+

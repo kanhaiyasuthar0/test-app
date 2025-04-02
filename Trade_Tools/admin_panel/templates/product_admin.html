@@ -1,0 +1,25 @@
+{% extends "dashboard.html" %}
+{% load static %}
+
+{% block title %}Admin Panel{% endblock title %}
+
+{% block content %}
+<section id="hero" class="hero section dark-background">
+    <div class="container-fluid d-flex justify-content-center align-items-stretch flex-wrap gap-3 px-0 mx-0 " style=" margin-bottom: 3rem; margin-top: 7rem; ">
+        {% for product in products %}
+        <div class="card text-center shadow-lg p-3 card-wrapper" style="width: 18rem; border-radius: 15px; background-color:rgb(255, 255, 255); color: white; display: flex; flex-direction: column; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);" onclick="openPopup()" >
+            <img src="{{ product.image.url }}" class="card-img-top mt-3" alt="{{ product.title }}" style="border-radius: 10px; max-height: 150px; object-fit: cover;">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title font-weight-bold " style="color: rgb(45, 57, 63); font-width: bold; ">{{ product.title }}</h5>
+                    <h5 class="card-price font-weight-bold" style="color:rgb(45, 57, 63); font-size: 1.5rem;">₹{{ product.price }}</h5>
+                    <p class="card-description" style="font-size: 15px; color: rgb(45, 57, 63);">{{ product.description }}</p>
+                </div>
+                <a href="{% url 'product_edit' product.pk %}?title={{ product.title }}" class="btn  mt-auto" style="background-color:#ef6603; color:rgb(255, 255, 255);">Edit</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,568 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+Trade Tool
+{% endblock %}
+
+
+
+{% block content %}
+    <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero hero3 section dark-background" >
+
+      <div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">Welcome to <span style="text-decoration:none;">Trade Tool</span></h2>
+            <p class="animate__animated animate__fadeInUp">Your Partner in Algo Trading Solutions!
+            From custom Excel tools to advanced algorithmic software, we design and deliver the technology you need to execute your trading strategies with precision.</p>
+            {% comment %} <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> {% endcomment %}
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">Your Trading Strategy, Our Technology</h2>
+            <p class="animate__animated animate__fadeInUp">At Trade Tool, we bring your trading ideas to life with tailored software and Excel-based tools designed to simplify and streamline your trading workflow.</p>
+            {% comment %} <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> {% endcomment %}
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">Simplify Your Trading with Trade Tool</h2>
+            <p class="animate__animated animate__fadeInUp">From customized Excel tools to powerful algo trading software, we provide solutions to automate and optimize your trading strategies. Your success is our priority!</p>
+            {% comment %} <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> {% endcomment %}
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Who we are</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              At Trade Tool, we specialize in developing custom software, Excel tools, and algorithmic trading solutions tailored to meet your trading strategies. With expertise in algo-trading and software development, we aim to simplify and optimize trading for our clients.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span>Creating bespoke algorithmic trading tools designed for your specific strategies.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Building powerful and efficient Excel tools for trading analysis.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Providing end-to-end solutions for any trading-related requirements.</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>Our mission is to empower traders by delivering tools that streamline their workflows, enhance decision-making, and drive success in trading.</p>
+            <a href="{% url 'about' %}" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <ul class="nav nav-tabs row  d-flex" data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+              <i class="bi bi-binoculars"></i>
+              <h4 class="d-none d-lg-block">Customized Algo Development</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+              <i class="bi bi-box-seam"></i>
+              <h4 class="d-none d-lg-block">Excel-Based Tools</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+              <i class="bi bi-brightness-high"></i>
+              <h4 class="d-none d-lg-block">Strategy Automation</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+              <i class="bi bi-command"></i>
+              <h4 class="d-none d-lg-block">Dedicated Support and Consultation</h4>
+            </a>
+          </li>
+        </ul><!-- End Tab Nav -->
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="features-tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Tailor-made algorithms to automate and optimize your trading strategies.</h3>
+                <p class="fst-italic">
+                  We specialize in developing custom algorithms tailored to your unique trading strategies. Our solutions help automate processes, reduce human error, and enhance trading efficiency. With precision-driven algorithms, you can trade with confidence and save time on repetitive tasks.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab> Personalized algo solutions for your specific needs.</spab>
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> <span>Full automation of your trading processes.</span>.</li>
+                  <li><i class="bi bi-check2-all"></i> <span>Improved accuracy and consistency in trade execution.</span></li>
+                </ul>
+                <p>
+                  Our team ensures that every algorithm is optimized to match your strategy, helping you maximize profits while minimizing risk. Whether you’re looking for high-frequency trading or long-term trend analysis, we create the right tools to support your goals.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static 'img/working-1.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Powerful Excel tools for efficient trading and data management.</h3>
+                <p>
+                  Our Excel-based tools are designed to simplify your trading. With user-friendly interfaces and powerful formulas, they help you manage data, calculate trends, and make better trading decisions. These tools can be customized to match your specific needs, providing you with easy access to key performance indicators.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span> Simple, intuitive design for quick implementation.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span> Advanced formulas for precise calculations.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Real-time data analysis to aid decision-making.</span></li>
+                  <p>
+                    Whether you're an experienced trader or just getting started, our Excel tools make it easy to track your portfolio and optimize your trades with minimal effort.
+                  </p>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static 'img/working-2.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Automate your trading strategies for consistent and error-free execution</h3>
+                <p>
+                  Transform your manual trading strategies into automated systems. Our strategy automation tools let you trade 24/7 without constant supervision, ensuring that your strategies are executed consistently and at optimal times. Automating your trades helps you minimize emotional decision-making and maximize efficiency.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Automation of complex trading strategies.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Consistent execution of your strategies, day or night.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Minimized errors and emotional interference.</span></li>
+                </ul>
+                <p class="fst-italic">
+                  We offer solutions that seamlessly integrate with your existing platforms, so you can trust that your strategies will be executed precisely as you envision, even when you’re not monitoring the markets.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static 'img/working-3.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Comprehensive support to ensure seamless trading success</h3>
+                <p>
+                  We provide comprehensive support throughout your trading journey. Our team is with you every step of the way, from setting up your system to optimizing and troubleshooting your strategies. We focus on delivering personalized assistance, ensuring that your tools and strategies are fine-tuned for success.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Full support during setup and implementation.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Ongoing optimization to keep your strategies effective.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Quick problem resolution for smooth trading.</span></li>
+                </ul>
+                <p>
+                 Whether you're new to algo trading or looking to fine-tune advanced strategies, we offer expert advice and hands-on support to make sure your systems run smoothly and efficiently.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static 'img/working-4.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- product section -->
+    <section id="hero" class="hero section dark-background" style=" padding-top:30px; ">
+        <h3 class="product_h3">Products</h3>
+        <div class="container-fluid d-flex justify-content-center align-items-stretch flex-wrap gap-3 px-0 mx-0" >
+        {% for product in products %}
+            <div class="product_card text-center shadow-lg card-wrapper">
+                <img src="{{ product.image.url }}" class="card-img-top mt-3" alt="{{ product.title }}">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h1 class="card-title font-weight-bold m-3 " >{{ product.title }}</h1>
+                        <h4 class="card-price font-weight-bold"><p>₹{{ product.price }}</p>₹{{ product.actual_price }}</h4>
+                        <p class="card-description">{{ product.description }}</p>
+                    </div>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'initiate_payment_and_log' product.id product.price product.title %}?title={{ product.title }}" class="btn-card_product" >Buy Now</a>
+                        {% else %}
+                            <a href="{% url 'registration:login' %}" class="btn-card_product" >Buy Now</a>
+                        {% endif %}
+                </div>
+                <div class="info-icon_product" onclick="openPopup({{ forloop.counter }})"> <img src="{% static 'img/eye (3).png' %}"
+                        alt=""></div>
+                <div class="dis-icon_product"> <img src="{% static 'img/discount_bg.png'%} "
+                        alt=""></div>
+                <div class="Percent_value"> <p>{{ product.discount_percent}}%</p> </div>
+            </div>
+            <div class="popup" id="popup-{{ forloop.counter }}">
+                <div class="popup-content">
+                    <button class="close-btn_product" onclick="closePopup({{ forloop.counter }})">Close</button>
+                    <div class="slider-container_product">
+                        <div class="slider_product" id="slider-{{ forloop.counter }}">
+                            <img src="{{ product.image.url }}">
+                            <img src="{{ product.image1.url }}">
+                            <img src="{{ product.image2.url }}">
+                            <img src="{{ product.image3.url }}">
+                            <img src="{{ product.image4.url }}">
+                            <img src="{{ product.image5.url }}">
+                        </div>
+                    </div>
+                    <div class="slider-controls_product">
+                        <button onclick="prevSlide({{ forloop.counter }})">&#9664;</button>
+                        <button onclick="nextSlide({{ forloop.counter }})">&#9654;</button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-9 text-center text-xl-start">
+            <h3>Chat With Us</h3>
+            <p>TradeTool creates custom trading algorithms for your personal strategies. Designed for you, built by us.</p>
+          </div>
+          <div class="col-xl-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" id="ctaButton" href="#"><i class="bi bi-whatsapp"></i>  Chat </a>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>Our Hardworking Team</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Prakash Jangid</h4>
+                <span>Owner</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'img/harsh2.png' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Harish Suthar</h4>
+                <span>Developer</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          {% comment %} <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'img/team/team-4.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+              </div>
+            </div>
+          </div><!-- End Team Member --> {% endcomment %}
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+
+    <section id="contact" class="contact section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Contact</h2>
+                {% comment %} <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> {% endcomment %}
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-5">
+
+                        <div class="info-wrap">
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h3>Address</h3>
+                                    <p>Rajsamand, Rajsthan, 313324</p>
+
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bi bi-telephone flex-shrink-0"></i>
+                                <div>
+                                    <h3>Call Us</h3>
+                                    <p>+91 8764468879</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h3>Email Us</h3>
+                                    <p>developerpy247@gmail.com</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <iframe
+                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14629.756251576633!2d73.87822062267321!3d25.07144308751856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e84b3a60a151%3A0xb55f8b8f6a52c06b!2sRajsamand%2C%20Rajasthan%2C%20India!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sin"
+                                frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <form method="post" action="{% url 'trade_home' %}" data-aos="fade-up" data-aos-delay="200">
+                            {% csrf_token %}
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <label for="name-field" class="pb-2">Your Name</label>
+                                    <input type="text" name="name" autocomplete="name" id="name-field" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="email-field" class="pb-2">Your Email</label>
+                                    <input type="email" class="form-control" name="email" autocomplete="email" id="email-field" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="subject-field" class="pb-2">Subject</label>
+                                    <input type="text" class="form-control" name="subject" autocomplete="subject" id="subject-field" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="message-field" class="pb-2">Message</label>
+                                    <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    <button type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div><!-- End Contact Form -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Contact Section -->
+
+  </main>
+{% endblock %}
+
+
+
+
+
+
+
+
+{% block script %}
+<script>
+    function openPopup(id) {
+        document.getElementById('popup-' + id).classList.add('active');
+    }
+
+    function closePopup(id) {
+        document.getElementById('popup-' + id).classList.remove('active');
+    }
+
+    function nextSlide(id) {
+        const slider = document.getElementById('slider-' + id);
+        slider.appendChild(slider.firstElementChild);
+    }
+
+    function prevSlide(id) {
+        const slider = document.getElementById('slider-' + id);
+        slider.prepend(slider.lastElementChild);
+    }
+
+
+
+
+        document.getElementById("ctaButton").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const phoneNumber = "918764468879"; // Country code के साथ नंबर डालें
+            const whatsappURL = `https://wa.me/${phoneNumber}`;
+
+            // जांचें कि डिवाइस मोबाइल है या नहीं
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                // मोबाइल डिवाइस पर WhatsApp लिंक खोलें
+                window.location.href = whatsappURL;
+            } else {
+                // डेस्कटॉप पर जांचें कि क्या WhatsApp Web उपलब्ध है
+                const hasWhatsAppDesktopApp = /Windows|Macintosh/i.test(navigator.userAgent);
+                if (hasWhatsAppDesktopApp) {
+                    // डेस्कटॉप ऐप या वेब ब्राउज़र में WhatsApp खोलें
+                    window.location.href = whatsappURL;
+                } else {
+                    // अगर WhatsApp उपलब्ध नहीं है, तो अलर्ट दिखाएं
+                    alert(`WhatsApp is not available. Please open this link manually to contact us: ${whatsappURL}`);
+                }
+            }
+        });
+
+
+</script>
+
+<script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 10
+                }
+              }
+            }
+          </script>
+{% endblock %}

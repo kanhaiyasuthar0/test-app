@@ -1,0 +1,45 @@
+
+.codegpt
+.env
+venv
+
+# Virtual Environment (Python)
+venv/
+env/
+
+# Compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Secret Configuration Files
+.env
+*.sqlite3
+db.sqlite3
+
+# Logs & Cache
+*.log
+logs/
+*.pid
+*.seed
+*.lock
+*.cache
+
+# IDE & Editor Specific Files
+.vscode/
+.idea/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Migrations (If you don’t want to track)
+migrations/
+
+# Static & Media Files (Optional)
+staticfiles/
+media/
+
+# Docker & Deployment files (Optional)
+docker-compose.override.yml

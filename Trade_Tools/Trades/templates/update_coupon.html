@@ -1,0 +1,54 @@
+{% extends "dashboard.html" %}
+
+{% block title %}Coupon{% endblock %}
+
+{% block content %}
+        <div class="content-wrapper">
+
+
+        <!-- Section to Add New Coupon -->
+        <h2 class="section-title">Add New Coupon</h2>
+        <form method="post" class="form-container">
+            {% csrf_token %}
+            {{ add_form.as_p }}
+            <button type="submit" name="add_coupon">Add Coupon</button>
+        </form>
+
+        <!-- Section to Display and Update Existing Coupons -->
+        <h2 class="section-title">Existing Coupons</h2>
+        <table class="table-container">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Code</th>
+                    <th>Discount</th>
+                    <th>Active</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for coupon in coupons %}
+                <tr>
+                    <form method="post">
+                        {% csrf_token %}
+                        <td>{{ coupon.id }}</td>
+                        <td>
+                            <input type="text" name="code" value="{{ coupon.code }}">
+                        </td>
+                        <td>
+                            <input type="number" step="0.01" name="discount" value="{{ coupon.discount }}">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="is_active" {% if coupon.is_active %}checked{% endif %}>
+                        </td>
+                        <td>
+                            <input type="hidden" name="coupon_id" value="{{ coupon.id }}">
+                            <button type="submit" name="update_coupon">Update</button>
+                        </td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock  %}

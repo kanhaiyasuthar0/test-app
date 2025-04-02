@@ -1,0 +1,60 @@
+{% extends "registration/login_layout.html" %}
+{% load static %}
+{% load socialaccount %}
+
+
+{% block title %}
+Login
+{% endblock %}
+
+
+{% block content %}
+<video autoplay loop muted>
+    <source src="{% static 'registration/img/video.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<nav>
+    <a href="#"><img src="{% static "registration/img/logo.svg" %}" alt="logo"></a>
+</nav>
+
+<div class="form-wrapper">
+    <h2>Sign In</h2>
+    <form method="POST" action="{% url 'registration:login' %}">
+        {% if messages %}
+                {% for message in messages %}
+                    <div style="width: 90%; height: 10px background-color:rgba(235, 0, 55, 0.68); color:rgba(235, 0, 82, 0.83);" class="alert1 alert1-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+        {% endif %}
+        {% csrf_token %}
+        <!-- Email input -->
+        <div class="form-control1">
+            <input type="text" id="form2Example1" class="form-control" name="email" required />
+            <label class="form-label" for="form2Example1">Email address</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-control1">
+            <input type="password" id="form2Example2" name="password" required />
+            <label for="form2Example2">Password</label>
+        </div>
+        <button type="submit">Sign In</button>
+        <!-- Remember me and Forgot password -->
+        <div class="form-help">
+            <div class="remember-me">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> Remember me </label>
+            </div>
+            <a href="{% url 'password_reset' %}">Forgot password?</a>
+        </div>
+
+        <!-- Register and social buttons -->
+        <div class="res text-center">
+            <p>Not a member? <a href="{% url 'registration:sign_up' %}">Register</a></p>
+            <a href="{% provider_login_url 'google' %}" class="btn btn-danger w-100">
+                <i class="fab fa-google me-2"></i> Sign in with Google
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}

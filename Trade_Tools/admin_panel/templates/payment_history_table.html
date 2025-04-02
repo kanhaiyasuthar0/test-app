@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Tool</title>
+</head>
+<body>
+    <div>
+        {% if historys %}
+            {% for history in historys %}
+            <form method="POST" action="{% url 'update_payment_status' %}">
+                {% csrf_token %}
+                <tr>
+                    <th scope="row">
+                        <button class="btn btn-icon btn-round btn-success btn-sm me-2">
+                            <i class="fa fa-check"></i>
+                        </button>
+                        {{ history.order_id }}
+                    </th>
+                    <td class="text-end">{{ history.customer_name }}</td>
+                    <td class="text-end">{{ history.title }}</td>
+                    <td class="text-end">{{ history.created_at }}</td>
+                    <td class="text-end">{{ history.amount }}</td>
+                    <td class="text-end">
+                        <span class="badge
+                            {% if history.payment_status == 'success' %}badge-success
+                            {% else %}badge-danger
+                            {% endif %}">
+                            {{ history.payment_status }}
+                        </span>
+                    </td>
+                    <td class="text-end">
+                        <input type="hidden" name="order_id" value="{{ history.order_id }}">
+                        <input type="hidden" name="payment_status" value="success">
+                        <button type="submit" class="btn btn-primary btn-sm">Update Status</button>
+                    </td>
+                </tr>
+            </form>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7" class="text-center">No payment history available.</td>
+            </tr>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+

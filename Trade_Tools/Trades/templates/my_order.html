@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    My Orders
+{% endblock %}
+
+
+{% block content %}
+<section id="hero" class="hero section dark-background">
+    <div class="order_container">
+        <div class="order-header-bar">My Orders</div>
+        <div class="order-labels">
+            <span>Order ID</span>
+            <span>Amount</span>
+            <span>Payment Status</span>
+            <span>Date</span>
+            <span>Action</span>
+        </div>
+        {% if user.is_authenticated %}
+            {% for payment in payments %}
+            <div class="order-item">
+                <span>{{ payment.order_id }}</span>
+                <span>{{ payment.amount }}</span>
+                <span>
+                    <span class="order_badge {% if payment.payment_status == 'success' %}order_success{% elif payment.payment_status == 'pending' %}order_warning{% else %}order_danger{% endif %}">
+                        {{ payment.payment_status }}
+                    </span>
+                </span>
+                <span>{{ payment.created_at }}</span>
+                <span>
+                    {% if payment.payment_status == "success" %}
+                        {% for product in products %}
+                            {% if product.title == payment.title %}
+                                <a href="{% url 'download_file' product.id %}" class="order_btn-download">Download</a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </span>
+            </div>
+            {% empty %}
+            <p class="text-center">No orders found.</p>
+            {% endfor %}
+        {% else %}
+            <a href="{% url 'registration:login' %}" class="order_btn-download1">Login to view orders</a>
+        {% endif %}
+        <p class="msg font-weight-bold text-center color-dark">If your payment has been completed, please wait for 30 minutes for the payment success confirmation. If 30 minutes have passed, please contact this number: <strong>1234567689</strong>.</p>
+    </div>
+</section>
+{% endblock %}

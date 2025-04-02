@@ -1,0 +1,66 @@
+{% extends "registration/login_layout.html" %}
+{% load socialaccount %}
+{% load static %}
+
+{% block content %}
+<video autoplay loop muted>
+    <source src="{% static 'registration/img/video.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<nav>
+    <a href="#"><img src="{% static "registration/img/logo.svg" %}" alt="logo"></a>
+</nav>
+
+    <div class="form-wrapper">
+        <h2>Sign up</h2>
+
+        <form method="POST" action="{% url 'registration:sign_up' %}">
+            {% csrf_token %}
+
+            <!-- Display Messages -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div style="width: 90%; height: 10px background-color:rgba(235, 0, 55, 0.68); color:rgba(235, 0, 82, 0.83);" class="alert1 alert1-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            <!-- Username -->
+            <div class="form-control1">
+                <input type="text" name="username" required >
+                <label for="username" >Username</label>
+            </div>
+
+            <!-- Email -->
+            <div class="form-control1">
+                <input type="email" name="email" required>
+                <label for="email" >Email</label>
+            </div>
+
+            <!-- Password -->
+            <div class="form-control1">
+                <input type="password" name="password1"  required>
+                <label for="password1" >Password</label>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-control1">
+                <input type="password" name="password2"  required>
+                <label for="password2" >Confirm Password</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" >Sign Up Now</button>
+
+            <!-- OR Divider -->
+
+
+            <div class="res text-center">
+                <p>You already have an account: <a href="{% url 'registration:login' %}">Login</a></p>
+                <a href="{% provider_login_url 'google' %}" class="btn btn-danger w-100 text-decoration-none">
+                    <i class="fab fa-google me-2"></i> Sign in with Google
+                </a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
